@@ -1,0 +1,122 @@
+@import 'variables';
+
+table{
+  font-size:0.8em;
+  margin:0 auto;
+  td, th{
+    display: inline-block;
+    box-sizing: border-box;
+    padding:10px;
+    width:60px;
+    height:50px;
+    margin:5px;
+  }
+  td{
+    background:$turquoise;
+    font-size:1.7em;
+    color: $snow;
+    -webkit-box-shadow: 0px 0px 35px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 35px -12px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 35px -12px rgba(0,0,0,0.75);
+  }
+  .min{
+    display:inline-block;
+    font-size: 1em;
+  }
+  .max{
+    display:none;
+  }
+  .number{
+    width:50px;
+    text-transform:uppercase;
+    text-align:center;
+    .nbr{
+      font-size:1.6em;
+      display:block;
+
+    }
+  }
+  .name-row th{
+    height:auto;
+    padding:0;
+    text-align:center;
+    text-transform:uppercase;
+  }
+}
+
+table#grafik{
+  td{
+    text-transform:uppercase;
+    background:$indygo;
+    height:70px;
+    text-align:center;
+    p{
+      font-size:0.7em;
+      margin-bottom:0.2em;
+    }
+  }
+  .name-row th{
+  font-size:1em;}
+}
+
+
+//--------------------------------------------------------------------------------------media 767px
+@media(min-width:767px){
+  table{
+    font-size:1.6em;
+    margin:0 auto;
+    td, th{
+      display: inline-block;
+      box-sizing: border-box;
+      padding:20px;
+      width:200px;
+      height:120px;
+      margin:20px;
+    }
+    td{
+      background:$turquoise;
+      font-size:2em;
+      color: $snow;
+      -webkit-box-shadow: 0px 0px 35px -12px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 0px 35px -12px rgba(0,0,0,0.75);
+      box-shadow: 0px 0px 35px -12px rgba(0,0,0,0.75);
+    }
+    .min{
+      display:none;
+    }
+    .max{
+      display:inline-block;
+      font-size:2.2em;
+    }
+    .number{
+      width:150px;
+      text-transform:uppercase;
+      text-align:center;
+      .nbr{
+        font-size:2.2em;
+        display:block;
+
+      }
+    }
+    .name-row th{
+      height:auto;
+      padding:0;
+      text-align:center;
+      text-transform:uppercase;
+    }
+  }
+
+  table#grafik{
+    td{
+      text-transform:uppercase;
+      background:$indygo;
+      height:150px;
+      p{
+        font-size:0.5em;
+        margin-bottom:0.2em;
+      }
+    }
+    .name-row th{
+      height:auto;}
+  }
+}//--------------------------------------end of media query

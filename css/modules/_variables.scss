@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Arcon-Regular';
+  src: url('../fonts/Arcon-Regular.otf');
+}
+
+$Arcon: 'Arcon-Regular';
+
+
+$blue: #254d8a;
+$snow: #f6f6f6;
+$sea: #a5d6dd;
+$indygo: #244d8b;
+$turquoise: #45b0c4;
+
+// Mobile breakpoints
+@mixin tablet {
+  @media screen and (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1000px) {
+    @content;
+  }
+}
