@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Zosia Rusinowska">
 
-    <title>AQUA&BIKE</title>
+    <title>AQUA&amp;BIKE</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -48,11 +48,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top" id="title">AQUA&BIKE</a>
+                <a class="navbar-brand page-scroll" href="#page-top" id="title">AQUA&amp;BIKE</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <!-- social list -->
+
+
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden">
@@ -73,7 +76,14 @@
                     <li>
                         <a class="page-scroll" href="#contact">Kontakt</a>
                     </li>
+                    <li class="social">
+                      <a href="https://www.facebook.com/Aqua-Bike-499630556790987/?fref=ts">
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    </li>
+
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -105,9 +115,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 data-kui-anim="fadeIn" class="section_head">O nas</h1>
+                    <h2 data-kui-anim="fadeIn" class="section_head">AQUA&amp;BIKE</h2>
                 </div>
             </div>
+            <img src="img/pool.jpg" id="photo_aqua">
         </div>
     </section>
 
@@ -115,7 +126,7 @@
     <section id="ofert" class="section">
         <div class="boxes_4">
           <div id="box_class_aerobik" class="box_1_4 box_left">
-            <h2><span>Aqua</span> Aerobik</h2>
+            <h3><span>Aqua</span> Aerobik</h3>
             <p class="hidden">
               Aqua aerobik jest formą aktywności fizycznej o charakterze wytrzymałościowym,
                realizowaną w basenie, którą może uprawiać każdy, niezależnie od wieku oraz
@@ -125,7 +136,7 @@
             </p>
           </div>
           <div id="box_class_spin" class="box_1_4 box_right">
-            <h2><span>Aqua</span> Spinning</h2>
+            <h3><span>Aqua</span> Spinning</h3>
             <p class="hidden">
               Aqua spinning, inaczej aqua bike lub hydrobike jest formą aktywności fizycznej
                o charakterze wytrzymałościowym, realizowaną w basenie na specjalnie do tego
@@ -137,7 +148,7 @@
             </p>
           </div>
           <div id="box_class_latino" class="box_1_4 box_left">
-            <h2><span>Aqua</span> Latino</h2>
+            <h3><span>Aqua</span> Latino</h3>
             <p class="hidden">
               trening 45-cio minutowy o wysokiej intensywności. Prowadzony przy gorących latyno-amerykańskich rytmach,
                które naładują Cię pozytywną energią. Charakteryzują go częste i szybkie zmiany pozycji ciała.
@@ -146,7 +157,7 @@
             </p>
           </div>
           <div id="box_class_mix" class="box_1_4 box_right">
-            <h2><span>Aqua</span> Mix</h2>
+            <h3><span>Aqua</span> Mix</h3>
             <p class="hidden">
               Trening 45-cio minutowy o wysokiej intensywności. Prowadzony przy rytmach czarnej,
                latynoskiej i współczesnej muzyki. Trening wytrzymałościowy, na którym możesz pozbyć
@@ -158,37 +169,57 @@
 
     </section>
 
+
     <!-- Pricing Section -->
     <section id="pricing" class="section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 data-kui-anim="fadeIn" class="sea_bue">Cennik</h1>
+                    <h2 data-kui-anim="fadeIn" class="sea_bue">Cennik</h2>
                 </div>
             </div>
-            <div class="row center-block">
-              <table>
-                <tr class="name-row">
-                    <th class="number"></th>
-                    <th>Aqua Aerobik</th>
-                    <th>Aqua Spinning</th>
-                    <th>Nauka Pływania</th>
-                </tr>
-                <tr>
-                    <th class="number"><span class="nbr">1</span>
-                      wejście</th>
-                    <td>25zł</td>
-                    <td>20zł</td>
-                    <td>40zł</td>
-                </tr>
-                <tr>
-                    <th class="number"><span class="nbr">6</span>
-                      wejście</th>
-                    <td>110zł</td>
-                    <td>90zł</td>
-                    <td>180zł</td>
-                </tr>
-              </table>
+            <div class="row center-block flex-row pricing-boxes">
+
+                <div class="flex-column pricing-box">
+                    <h4>Aqua Aerobik</h4>
+                    <div class="price-box">
+                      <span class="price"><span class="numb">25</span>zł</span>
+                      <span class="time">/ 1 wejście</span>
+                  </div>
+
+                    <div class="flex-column price-box">
+                      <span class="price"><span class="numb">110</span>zł</span>
+                      <span class="time">/ 6 wejść</span>
+                  </div>
+                </div>
+
+                <div class="flex-column pricing-box">
+                    <h4>Aqua Spinning</h4>
+                    <div class="price-box">
+                      <span class="price"><span class="numb">20</span>zł</span>
+                      <span class="time">/ 1 wejście</span>
+                  </div>
+
+                    <div class="price-box">
+                      <span class="price"><span class="numb">90</span>zł</span>
+                      <span class="time">/ 6 wejść</span>
+                  </div>
+                </div>
+
+                <div class="pricing-box">
+                    <h4>Nauka Pływania</h4>
+                    <div class="price-box">
+                      <span class="price"><span class="numb">40</span>zł</span>
+                      <span class="time">/ 1 wejście</span>
+                  </div>
+
+                    <div class="price-box">
+                      <span class="price"><span class="numb">180</span>zł</span>
+                      <span class="time">/ 6 wejść</span>
+                  </div>
+                </div>
+
+
             </div>
         </div>
     </section>
@@ -198,62 +229,72 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 data-kui-anim="fadeIn" class="sea_bue">Grafik</h1>
+                    <h2 data-kui-anim="fadeIn" class="sea_bue">Grafik</h2>
                 </div>
             </div>
-            <div class="row center-block">
-              <table id="grafik">
-                <tr class="name-row">
-                    <th class="min">Pon</th>
-                    <th class="min">Wt</th>
-                    <th class="min">Śr</th>
-                    <th class="min">Czw</th>
-                    <th class="max">Poniedziałek</th>
-                    <th class="max">Wtorek</th>
-                    <th class="max">Środa</th>
-                    <th class="max">Czwartek</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                      <p>19:15</p>
-                      <p>Aqua Mix</p>
-                      </td>
-                    <td></td>
-                    <td>
-                      <p>19:15</p>
-                      <p>Aqua 60-80</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                      <p>20:00</p>
-                      <p>Aqua Latino</p>
-                    </td>
-                    <td>
-                      <p>20:00</p>
-                      <p>Aqua Latino</p>
-                    </td>
-                    <td>
-                      <p>20:00</p>
-                      <p>Aqua Mix</p>
-                    </td>
-                    <td>
-                      <p>20:00</p>
-                      <p>Aqua Mix</p>
-                    </td>
-                </tr>
-              </table>
+            <div class="center-block">
+              <div id="grafik" class="flex-row">
+
+                  <div class="day flex-column">
+                      <h4>Poniedziałek</h4>
+                      <div class="lesson empty">
+                        <p></p>
+                        <p></p>
+                      </div>
+                      <div class="lesson">
+                        <p>20:00</p>
+                        <p>Aqua Latino</p>
+                      </div>
+                  </div>
+
+                  <div class="day flex-column">
+                      <h4>Wtorek</h4>
+                      <div class="lesson">
+                        <p>19:15</p>
+                        <p>Aqua Mix</p>
+                      </div>
+                      <div class="lesson">
+                        <p>20:00</p>
+                        <p>Aqua Latino</p>
+                      </div>
+                  </div>
+
+                  <div class="day flex-column">
+                      <h4>Środa</h4>
+                      <div class="lesson empty">
+                        <p></p>
+                        <p></p>
+                      </div>
+                      <div class="lesson">
+                        <p>20:00</p>
+                        <p>Aqua Mix</p>
+                      </div>
+                  </div>
+
+                  <div class="day flex-column">
+                      <h4>Czwartek</h4>
+                      <div class="lesson">
+                        <p>19:15</p>
+                        <p>Aqua 60-80</p>
+                      </div>
+                      <div class="lesson">
+                        <p>20:00</p>
+                        <p>Aqua Mix</p>
+                      </div>
+                  </div>
+
+              </div><!-- end of grafik -->
             </div>
         </div>
     </section>
 
+
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="container">
-            <div class="row">
+        <div id="text-module">
+            <div class="row flex-row">
                 <div class="col-sm-9">
-                    <h1 data-kui-anim="fadeIn" class="">Kontakt</h1>
+                    <h2 data-kui-anim="fadeIn" class="">Kontakt</h2>
                     <div>
                       <p id="adress">Pływalnia Zespół Szkół im. I. Łukasiewicza<br>
                         ul. Siedlecka 6<br>
@@ -263,11 +304,36 @@
                     Linda Soboń<br>
                     Tel : +48 695 313 614</p>
                 </div>
+                <img src="img/arrow.svg" id="arrow">
+                <img src="img/pool.jpg" id="pool">
+
             </div>
 
         </div>
-        <iframe width="100%" height="500px" src="https://maphub.net/embed/3782" frameborder="0" allowfullscreen></iframe>
+
+        <!---<iframe width="100%" height="400px" src="https://maphub.net/embed/3782" frameborder="0" allowfullscreen></iframe>--->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d151840.40981999028!2d14.58819697858368!3d53.513012272720225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47aa0cad56f4db45%3A0x848a2746e729c6e9!2sSiedlecka+6!5e0!3m2!1spl!2spl!4v1479919206144" width="100%" height="400" frameborder="0" style="border:0; margin-top:-4em;" allowfullscreen></iframe>
+        <!---<div id="map"></div>--->
     </section>
+
+  <!-- Footer -->
+    <footer class="">
+      <div class="container">
+          <div class="row  flex-row">
+
+            <h4>AQUA&amp;BIKE &copy; 2016</h4>
+
+            <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i>ul. Siedlecka 6, Police</div>
+            <div class="info"><i class="fa fa-mobile" aria-hidden="true"></i>+48 695 313 614</div>
+
+
+
+          </div>
+
+
+
+      </div>
+    </footer>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -283,6 +349,9 @@
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/scrolling-nav.js"></script>
 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf5Ibx-fslLhbk0LzYcUI-bC1A8K_v9uo&callback=initMap">
+    </script>
+
     <script>
         $(document).ready(function() {
           $('.box_1_4').on('click', function(){
@@ -291,6 +360,19 @@
 
           });
         });
+    </script>
+    <script>
+      function initMap() {
+        var uluru = {lat: 53.5130123, lng: 14.588197,11};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: Police
+        });
+        var marker = new google.maps.Marker({
+          position: Police,
+          map: map
+        });
+      }
     </script>
 
 
