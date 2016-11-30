@@ -333,12 +333,7 @@ ul li{list-style:none;}
 
   }
 
-  #box_class_aerobik{
-    background: $indygo url('../img/01.jpg') center;
-  }
-  #box_class_spin{
-    background: $indygo url('../img/02.jpg') center;
-  }
+
   #box_class_latino{
     background: $indygo url('../img/03.jpg') center;
   }
@@ -353,7 +348,7 @@ ul li{list-style:none;}
 
   .no-image{
     background-image: none !important;
-    h2{
+    h3{
       text-align:left;
       span{
         display: inline;
@@ -376,11 +371,20 @@ ul li{list-style:none;}
         font-size:1.2em;
       }
 
-      h2{
+      h3{
         font-size:3em;}
     }
   }
 
+}
+
+.boxes_2{
+  #box_class_aerobik{
+    background: $indygo url('../img/01.jpg') center;
+  }
+  #box_class_spin{
+    background: $indygo url('../img/02.jpg') center;
+  }
 }
 
 //--------------------------------------------end of ofert
@@ -388,7 +392,7 @@ ul li{list-style:none;}
 
 }
 //
-//
+//PRICING
 //
 #pricing{
     box-sizing:border-box;

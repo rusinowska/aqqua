@@ -344,9 +344,9 @@ ul li {
     transition: all 2s ease-in-out; }
   .boxes_4 .no-image {
     background-image: none !important; }
-    .boxes_4 .no-image h2 {
+    .boxes_4 .no-image h3 {
       text-align: left; }
-      .boxes_4 .no-image h2 span {
+      .boxes_4 .no-image h3 span {
         display: inline; }
     @media screen and (min-width: 640px) {
       .boxes_4 .no-image {
@@ -362,7 +362,7 @@ ul li {
           text-align: justify !important;
           text-align-last: left;
           font-size: 1.2em; }
-        .boxes_4 .no-image h2 {
+        .boxes_4 .no-image h3 {
           font-size: 3em; } }
 
 #pricing {
