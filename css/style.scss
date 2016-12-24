@@ -34,8 +34,8 @@ h1{
 }
 
 h2{
-    font-size:2em;
-    text-align:center;
+    font-size:3em;
+    text-align:left;
     @include tablet {
       font-size: 3.5em;
     }
@@ -50,8 +50,10 @@ h3{
 
 ul li{list-style:none;}
 
+a{color:inherit;}
+
 .sea_blue{
-  color:$sea !important;
+  color:#cdcdcd !important;
 
 }
 .navbar-default .navbar-nav > li > a:hover,
@@ -109,11 +111,12 @@ ul li{list-style:none;}
 
 .section{
     height:260px;
-    padding-top:50px;
+    padding-bottom:50px;
 
     @include tablet {
       height: 100%;
       padding-top:50px !important;
+      padding-bottom:0;
       text-align: center;
       background: $snow;
     }
@@ -255,16 +258,91 @@ ul li{list-style:none;}
 //ABOUT
 //
 #about{
-  overflow-x: hidden;
+
+  height:auto;
+  background-size: cover;
+  display:flex;
+  align-items:center;
+  font-size:1.2em;
+
+  @include tablet {
+    overflow-x: hidden;
+    height:100%;
+    font-size:1em;
+  }
+
+  .content{
+
+    display:flex;
+    flex-direction:column;
+    @include tablet {
+      flex-direction:row;
+      align-items:center;
+      font-size:1.4em;
+      text-align:left;
+      margin: auto auto;
+
+    }
+  }
+  .box-mini{
+    width:auto;
+    @include tablet {
+    //  max-width:850px;
+    width:650px;
+    margin:1.5em;
+    }
+  }
+
 
   h2{
+    color: #ccc;
+    text-align:right;
+    font-size:3em;
+    position:relative;
+    margin-top:-2em;
+
+      @include tablet {
+        position:relative;
+        margin-left:-1em;
+        font-size:7em;
+      }
+  }
+  h3{
     color: $indygo;
+    font-size:1.5em;
+    text-align:right;
+  }
+  h3,p{
+    //margin-left:8em;
   }
 
-  #photo_aqua{
-    max-height:400px;
-    width:100%;
+  p{text-align:justify;}
+
+  #photo-box{
+    width:300px;
+    height:300px;
+    overflow:hidden;
+  //  border-radius:100%;
+    @include tablet {
+      width:450px;
+      height:450px;
+    }
   }
+
+  #photo1{
+    width: auto;
+    height:450px;
+    position:relative;
+
+    -webkit-box-shadow: 10px 10px 52px 8px rgba(0,0,0,0.07);
+  -moz-box-shadow: 10px 10px 52px 8px rgba(0,0,0,0.07);
+  box-shadow: 10px 10px 52px 8px rgba(0,0,0,0.07);
+  //-webkit-filter: grayscale(1);
+  //filter: grayscale(0.5);
+  //opacity:0.9;
+  }
+
+
 }//------------------------------------------------end of #about
 
 
@@ -273,118 +351,64 @@ ul li{list-style:none;}
 // OFERT
 //
 #ofert{
-  height:800px;
+  height:auto;
+  font-size:1.1em;
   @include tablet {
-      height:auto;
+      font-size:1.2em;
   }
 }
-.boxes_4{
+
+
+.boxes_2{
   width: 100%;
   height:auto;
   display:flex;
-  flex-direction: column;
-  -webkit-box-shadow: inset 0px 5px 87px 67px rgba(33,46,88,1);
-  -moz-box-shadow: inset 0px 5px 87px 67px rgba(33,46,88,1);
-  box-shadow: inset 0px 5px 87px 67px rgba(33,46,88,1);
-
-  @include tablet{
-    width:100%;
-    height:100%;
+  flex-direction:column;
+  justify-content:center;
+  @include tablet {
     flex-direction:row;
-    flex-wrap:wrap;
 
-    .box_left{
-      justify-content:flex-start;
-      text-align:left;
-    }
-    .box_right{
-      justify-content:flex-end;
-      text-align:right;
-    }
   }
 
-  .box_1_4{
-    width:100%;
-    height:200px;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    box-sizing:border-box;
-    h3{
-      color: $snow;
-      text-transform: uppercase;
-      span{
-        display: block;
-      }
-    }
-    .hidden{
-      display:none;
-    }
-
+  .box_1_2{
+    margin:1em 0.5em;
+    max-width:100%;
+    padding:1em;
     @include tablet {
-      width:50%;
-      height:50vh;
-      background: $sea;
-      align-items:center;
-      padding:4rem;
-      cursor:pointer;
-      h3{font-size:6.5em;}
+      margin:1em 3em;
+      max-width:35%;
+      padding:1em;
+
     }
 
-  }
-
-
-  #box_class_latino{
-    background: $indygo url('../img/03.jpg') center;
-  }
-  #box_class_mix{
-    background: $indygo url('../img/04.jpg') center;
-  }
-
-  #box_class_mix, #box_class_latino, #box_class_spin, #box_class_aerobik{
-    background-size:100%;
-    transition: all 2s ease-in-out;
-  }
-
-  .no-image{
-    background-image: none !important;
+    img{
+      max-width:100%;
+      height:auto;
+      margin-bottom:4em;
+    //  -webkit-filter: grayscale(0.7);
+    //  filter: grayscale(0.7);
+    }
     h3{
+
+      color: $indygo;
+      text-transform:uppercase;
       text-align:left;
-      span{
-        display: inline;
+      display:block;
+      box-sizing:border-box;
+      position:absolute;
+      margin:1.5em 0em 0em -0.4em;
+      font-size:3em;
+      @include tablet {
+        margin:2em 0em 0em -1em;
+        font-size:5em;
       }
     }
-
-    @include tablet {
-      width:50%;
-      height:50vh;
-      background: $sea;
-      align-items:flex-start;
-      flex-direction:column;
-      justify-content:flex-start;
-      padding:2rem;
-      color: white;
-
-      p{
-        text-align:justify !important;
-        text-align-last:left;
-        font-size:1.2em;
-      }
-
-      h3{
-        font-size:3em;}
+    p{
+      text-align:justify;
+      text-align-last:left;
     }
   }
 
-}
-
-.boxes_2{
-  #box_class_aerobik{
-    background: $indygo url('../img/01.jpg') center;
-  }
-  #box_class_spin{
-    background: $indygo url('../img/02.jpg') center;
-  }
 }
 
 //--------------------------------------------end of ofert
@@ -395,15 +419,16 @@ ul li{list-style:none;}
 //PRICING
 //
 #pricing{
-    box-sizing:border-box;
-    background:$sea;
+  box-sizing:border-box;
+  background:$sea;
+  height:auto;
 
 	/* Generated with http://gradient.quasi.ink */
 	background-size: cover;
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAkUlEQVQYVwXBOQ7CMBBA0T92vCQRp+YWnIMTUNFQQkODhCjSUCDI4jgzvCf7y81ccKQQiOLpfaRrIqEaWgq5z8jherfQRWg8Vo20QUskVqMuhbxLyPHxtNlvVHGIeEIx3KKkRfEIs1Tk9BrsPX0pKDl3eHWUz0hcjZRavmVEzsPHxmniV2ZUFcGBGc7AxLNuyh/KW0geYM9UdQAAAABJRU5ErkJggg==");
 
-  height:auto;
-  @include tablet{
+
+  @include tablet {
     height: 100%;
   }
 
@@ -411,34 +436,57 @@ ul li{list-style:none;}
       color: $snow;
     }
     h4{
-      font-size:1.7em;
+      font-size:1.3em;
       font-weight: bold;
       color: $snow;
       text-transform: uppercase;
+      text-align:center;
+
+        span{
+          &::before {
+            content: "\A";
+            white-space: pre;
+          }
+        }
+
+      @include tablet {
+        font-size:1.7em;
+        span{
+          &::before {
+            content: " ";
+          }
+        }
+      }
+
 
     }
 
   .pricing-boxes{
     margin: 0 auto;
-    justify-content:space-between;
+    justify-content:center;
     flex-flow: row wrap;
-
+    @include tablet {
+      justify-content:space-between;
+    }
 
       .pricing-box:nth-child(2){
         @include tablet{
+
         //border-right: 1px solid rgba(139, 144, 157, 0.18);
         //border-left: 1px solid rgba(139, 144, 157, 0.18);
       }
     }
 
     .pricing-box{
-      padding: 1em 4em;
-      width-max:300px;
-      margin: 0 1em;
-      //border: 2px solid $snow;
-
-    //  background:$snow;
+      padding: 0em;
+      width-max:200px;
+      margin: 0 0.5em;
       box-shadow: 0 15px 30px 0 rgba(0,0,0,.05);
+      @include tablet {
+        padding: 1em 4em;
+        width-max:300px;
+        margin: 0 1em;
+      }
     }
 
 
@@ -446,14 +494,15 @@ ul li{list-style:none;}
 
     .price-box{
       font-size:1.7em;
-      padding: 1em 0.5em;
+      padding: 0.5em;
       color:$snow;
       cursor:pointer;
 
 
-
       .price {
         line-height:1;
+        margin:0 auto;
+        text-align:center;
         .numb{
           font-weight: bold;
           font-size: 2em;
@@ -466,7 +515,9 @@ ul li{list-style:none;}
 
       :nth-child(2){
         display:block;
+        padding: 1em 0.5em;
         font-size:0.6em;
+        margin:0 auto;
       }
 
     }
@@ -489,15 +540,19 @@ ul li{list-style:none;}
 
 
   #grafik{
-    font-size:1.5em;
+    font-size:1.1em;
     margin:0 auto;
     justify-content:center;
     flex-flow: row wrap;
-
+    @include tablet{
+      font-size:1.5em;
+    }
 
     .day{
-      margin: 0 1em;
-
+      margin: 0 0.5em;
+      @include tablet{
+        margin: 0 1em;
+      }
     }
 
     h4{
@@ -507,12 +562,18 @@ ul li{list-style:none;}
     }
 
     .lesson{
-      width:8em;
-      height:5em;
-      padding:0.7em 1em;
+      width:7em;
+      height:4em;
+      padding:0.5em 0.5em;
       border: 2px solid $snow;
       margin-bottom:0.5em;
+      justify-content:center;
       //box-shadow: 0 15px 30px 0 rgba(0,0,0,.05);
+      @include tablet{
+        width:8em;
+        height:5em;
+        padding:0.7em 1em;
+      }
     }
     .empty{
       box-shadow:none;
@@ -524,12 +585,14 @@ ul li{list-style:none;}
 
 //
 // #CONTACT
+//do poprawki arrow w mini
 //
 #contact{
   text-align:left !important;
   color: $indygo !important;
   height:auto;
   overflow-x:hidden;
+  margin-left:1em;
 
   #text-module{
     overflow-x:hidden;
@@ -550,29 +613,37 @@ ul li{list-style:none;}
   }
 
   #map {
-        height: 400px;
-        width: 100%;
+    display:none;
+    @include tablet{
+      display:block;
+    }
        }
 
   #pool{
-      max-height:450px;
+      max-height:230px;
       width:auto;
-      margin:2em 0 0 -7em;
+      margin:1em 0 0 -14em;
       z-index:10;
+      @include tablet{
+        max-height:450px;
+        margin:2em 0 0 -7em;
+      }
 
   }
 
-
-  #arrow{
-    max-width:100%;
+  .arrow{
+    max-width:80px;
     height:auto;
     margin-left:3em;
-      z-index:100000;
+    z-index:100000;
+      @include tablet {
+        max-width:100%;
+      }
 
 
   }
 
-  @include tablet{
+  @include tablet {
     .row{margin-left:16%;}
     p{font-size: 1.8em;
       max-width:300px;}
@@ -596,14 +667,14 @@ ul li{list-style:none;}
     }
 
     .navbar-nav>.active>a {
-      background:$sea !important;
+      background: #cdcdcd !important;
       color: $snow !important;
       box-shadow: inset 0 0px 0 $snow, inset 0 -3px 0 $snow;
     }
 
     .top-nav-collapse{
         padding: 0;
-        background: $sea;
+        background: #cdcdcd;
     }
 
     #title{
@@ -632,17 +703,28 @@ footer{
   width:100%;
   height:auto;
   padding:1em;
-  font-size:1.2em;
   font-weight:100;
   box-sizing:border-box;
   background:$indygo;
   color:$snow;
-
-  .row{justify-content: space-between;}
-
   @include tablet{
+    font-size:1.2em;
     padding:1em 2em;
   }
+
+  .row{
+    display:flex;
+    justify-content: flex-start;
+    flex-direction:column;
+    align-items: center;
+
+    @include tablet{
+      flex-direction:row;
+      justify-content: space-between;
+    }
+  }
+
+
 
   h4{
     font-size:1em;
