@@ -20,7 +20,7 @@ html{
     @include tablet {
       font-size: 18px;
     }
-    @include desktop {
+    @include desktop-s {
       font-size: 20px;
     }
 }
@@ -92,608 +92,42 @@ a{color:inherit;}
   margin-top:1em;
   margin-bottom:1em;
 }
-
+//
+//NAVIGATION
+//
 .navbar{
   background: $snow;
+  box-sizing:border-box;
+  width:100vw;
+
+  @include desktop-s {
+    padding: 20px 0;
+
+    background: transparent;
+    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
+  }
+
   .page-scroll, .collapse .page-scroll{
     color: black;
     text-transform: uppercase;
+    @include desktop-s {
+      color: $snow;
+
+    }
   }
+
   #social{
         display:block;
-
         i{
           font-size: 1.5em;
           color:$snow;
-          padding:0.2em 0.4em;
-        }
+          padding:0.2em 0.4em;}
     }
-
-
 }
 
-.navbar-fixed-top{
-  border: none;
-}
-
-.section{
-    height:260px;
-    padding-bottom:50px;
-
-    @include tablet {
-      height: 100%;
-      padding-top:50px !important;
-      padding-bottom:0;
-      text-align: center;
-      background: $snow;
-
-
-    }
-
-    h2{
-      margin-bottom:1em;
-    }
-
-
-}
-
-/*********************/
-/* LAYOUT / SECTIONS */
-/*********************/
-
-.section_head{
-  color:$sea;
-}
-
-//
-// intro
-//
-.intro{
-  background:transparent url('../img/intro-bg.jpg') center;
-  background-size:250%;
-  color:$snow;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-
-  -webkit-box-shadow: inset 0px -16px 54px -34px rgba(33,46,88,1);
-  -moz-box-shadow: inset 0px -16px 54px -34px rgba(33,46,88,1);
-  box-shadow: inset 0px -16px 54px -34px rgba(33,46,88,1);
-
-  .intro-head{
-    font-size: 2.2em;
-    margin:0 auto;
-
-    .spin{
-      width:auto;
-      z-index:-2;
-      margin-left:1em;
-    }
-    .aero{
-      z-index:10;
-      margin-left:0em;
-      margin-bottom:-1.5em;
-    }
-    .aero:before{
-      content: "&";
-      position: absolute;
-      z-index: -1;
-      color:$sea;
-      font-size:4em;
-      margin-left:0.7em;
-      margin-top:-0.3em;
-    }
-  }
-  .arrow-down{
-    padding:1em;
-    box-sizing:border-box;
-    background:transparent;
-    margin:0 auto;
-    width:50px;
-    height:50px;
-    border: 2px $snow solid;
-    border-radius:50%;
-    position:absolute;
-    top:90%;
-    margin-top:-50px;
-    .fa{
-      color:$snow !important;
-      font-size:3em;
-      transition: all 1s ease;
-
-    }
-    :hover{
-      .fa{font-size:3.5em;}
-    }
-  }
-
-  @include tablet{
-    background-size:100%;
-    display:block;
-
-    .intro-head{
-      font-size: 6.3em;
-      line-height:1.2em;
-      display:flex;
-      flex-direction: column;
-      justify-content: center;
-      margin:15% auto 0 auto;
-      width:70%;
-
-      .spin{
-        width:auto;
-          z-index:-2;
-          margin-left:1em;
-      }
-
-      .aero{
-        z-index:10;
-        margin-left:-1.5em;
-        margin-bottom:-1.5em;
-      }
-      .aero:before{
-        content: "&";
-        position: absolute;
-        z-index: -1;
-        color:$sea;
-        font-size:4em;
-        margin-left:0.7em;
-        margin-top:0.1em;
-      }
-    }
-    .arrow-down{
-      width:70px;
-      height:70px;
-      border: 2px $snow solid;
-      border-radius:50%;
-      position:absolute;
-      top:90%;
-      margin-top:-50px;
-      .fa{
-        color:$snow !important;
-        font-size:3em;
-        transition: all 1s ease;
-
-      }
-      :hover{
-        .fa{font-size:3.5em;}
-      }
-    }
-  }//---------------end of mixin tablet
-
-}//--------end of #intro
-
-//
-//ABOUT
-//
-.about{
-
-  height:auto;
-  background-size: cover;
-  display:flex;
-  align-items:center;
-  font-size:1.2em;
-
-  @include tablet {
-    overflow-x: hidden;
-    height:100%;
-    font-size:1em;
-  }
-
-  .content{
-
-    display:flex;
-    flex-direction:column;
-    @include tablet {
-      flex-direction:row;
-      align-items:center;
-      font-size:1.4em;
-      text-align:left;
-      margin: auto auto;
-
-    }
-  }
-  .box-mini{
-    width:auto;
-    @include tablet {
-    //  max-width:850px;
-    width:650px;
-    margin:1.5em;
-    }
-  }
-
-
-  h2{
-    color: #ccc;
-    text-align:right;
-    font-size:3em;
-    position:relative;
-    margin-top:-2em;
-
-      @include tablet {
-        position:relative;
-        margin-left:-1em;
-        margin-top:0;
-        font-size:7em;
-      }
-  }
-  h3{
-    color: $indygo;
-    font-size:1.5em;
-    text-align:right;
-  }
-  h3,p{
-    //margin-left:8em;
-  }
-
-  p{text-align:justify;}
-
-  .photo-box{
-    width:300px;
-    height:300px;
-    overflow:hidden;
-  //  border-radius:100%;
-    @include tablet {
-      width:450px;
-      height:450px;
-    }
-  }
-
-  .photo1{
-    width: auto;
-    height:450px;
-    position:relative;
-
-    -webkit-box-shadow: 10px 10px 52px 8px rgba(0,0,0,0.07);
-  -moz-box-shadow: 10px 10px 52px 8px rgba(0,0,0,0.07);
-  box-shadow: 10px 10px 52px 8px rgba(0,0,0,0.07);
-  //-webkit-filter: grayscale(1);
-  //filter: grayscale(0.5);
-  //opacity:0.9;
-  }
-
-
-}//------------------------------------------------end of #about
-
-
-
-//
-// OFERT
-//
-#ofert{
-  height:auto;
-  font-size:1.1em;
-  @include tablet {
-      font-size:1.2em;
-  }
-}
-
-
-.boxes_2{
-  width: 100%;
-  height:auto;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  @include tablet {
-    flex-direction:row;
-
-  }
-
-  .box_1_2{
-    margin:1em 0.5em;
-    max-width:100%;
-    padding:1em;
-    @include tablet {
-      margin:1em 3em;
-      max-width:35%;
-      padding:1em;
-
-    }
-
-    img{
-      max-width:100%;
-      height:auto;
-      margin-bottom:4em;
-    //  -webkit-filter: grayscale(0.7);
-    //  filter: grayscale(0.7);
-    }
-    h3{
-
-      color: $indygo;
-      text-transform:uppercase;
-      text-align:left;
-      display:block;
-      box-sizing:border-box;
-      position:absolute;
-      margin:1.5em 0em 0em -0.4em;
-      font-size:3em;
-      @include tablet {
-        margin:2em 0em 0em -1em;
-        font-size:5em;
-      }
-    }
-    p{
-      text-align:justify;
-      text-align-last:left;
-    }
-  }
-
-}
-
-//--------------------------------------------end of ofert
-#oneback{
-
-}
-//
-//PRICING
-//
-#pricing{
-  box-sizing:border-box;
-  background:$sea;
-  height:auto;
-
-	/* Generated with http://gradient.quasi.ink */
-	background-size: cover;
-	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAkUlEQVQYVwXBOQ7CMBBA0T92vCQRp+YWnIMTUNFQQkODhCjSUCDI4jgzvCf7y81ccKQQiOLpfaRrIqEaWgq5z8jherfQRWg8Vo20QUskVqMuhbxLyPHxtNlvVHGIeEIx3KKkRfEIs1Tk9BrsPX0pKDl3eHWUz0hcjZRavmVEzsPHxmniV2ZUFcGBGc7AxLNuyh/KW0geYM9UdQAAAABJRU5ErkJggg==");
-
-
-  @include tablet {
-    height: 100%;
-    .row{
-      margin:0 auto;
-    }
-  }
-
-    h2{
-      color: $snow;
-    }
-    h4{
-      font-size:1.3em;
-      font-weight: bold;
-      color: $snow;
-      text-transform: uppercase;
-      text-align:center;
-
-        span{
-          &::before {
-            content: "\A";
-            white-space: pre;
-          }
-        }
-
-      @include tablet {
-        font-size:1.7em;
-        span{
-          &::before {
-            content: " ";
-          }
-        }
-      }
-
-
-    }
-
-  .pricing-boxes{
-    margin: 0 auto;
-    justify-content:center;
-    flex-flow: row wrap;
-    @include tablet {
-      justify-content:space-between;
-    }
-
-      .pricing-box:nth-child(2){
-        @include tablet{
-      }
-    }
-
-    .pricing-box{
-      padding: 0em;
-      width-max:200px;
-      margin: 0 0.5em;
-      box-shadow: 0 15px 30px 0 rgba(0,0,0,.05);
-      @include tablet {
-        padding: 1em 4em;
-        width-max:300px;
-        margin: 0 1em;
-      }
-    }
-
-    .price-box{
-      font-size:1.7em;
-      padding: 0.5em;
-      color:$snow;
-      cursor:pointer;
-
-      .price {
-        line-height:1;
-        margin:0 auto;
-        text-align:center;
-        .numb{
-          font-weight: bold;
-          font-size: 2em;
-        }
-      }
-
-      @include tablet {
-        font-size:2em;
-      }
-
-      :nth-child(2){
-        display:block;
-        padding: 1em 0.5em;
-        font-size:0.6em;
-        margin:0 auto;
-      }
-
-    }
-
-  }
-
-
-}//-----------------------------------------end of pricing
-//
-//TIMESHEET
-//
-.timesheet{
-  background-size: cover;
-	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAXklEQVQYV12NOQ6AQAwD7cD/H0iBEDVaLfTEKOYoSDWZWA6nrQn/CYKkrSRwPQ4VZKaFua5B86kE175/TYk7JBIcwk3luPTu0FvvFyRiHOxEgHNrqsXieVVcoYhw6ALMgTfF+iBLRgAAAABJRU5ErkJggg==");
-
-  height:auto;
-  @include tablet{
-    height: 100%;
-    .row{
-      margin:0 auto;
-    }
-  }
-
-  .container{
-    margin: 0 auto;
-  }
-
-
-  .grafik{
-    font-size:1.1em;
-    margin:0 auto;
-    justify-content:center;
-    flex-flow: row wrap;
-    @include tablet{
-      font-size:1.5em;
-    }
-
-    .day{
-      margin: 0 0.5em;
-      @include tablet{
-        margin: 0 1em;
-      }
-    }
-
-    h4{
-      text-align:center;
-      font-size:1.2em;
-      margin-bottom:1em;
-    }
-
-    .lesson{
-      width:7em;
-      height:4em;
-      padding:0.5em 0.5em;
-      border: 2px solid $snow;
-      margin-bottom:0.5em;
-      justify-content:center;
-      //box-shadow: 0 15px 30px 0 rgba(0,0,0,.05);
-      @include tablet{
-        width:8em;
-        height:5em;
-        padding:0.7em 1em;
-      }
-    }
-    .empty{
-      box-shadow:none;
-      border:none;
-    }
-  }
-}//-----------------------------------------end of #timesheet
-
-
-//
-// #CONTACT
-//do poprawki arrow w mini
-//
-.contact{
-  text-align:left !important;
-  color: $indygo !important;
-  height:auto;
-  overflow-x:hidden;
-  margin-left:0em;
-  margin-bottom:0;
-  padding-bottom:0;
-
-  .text{
-    margin: 0 2em;
-  }
-
-  #text-module{
-    overflow-x:hidden;
-    margin:2em 0;
-  }
-  .row{
-    margin-right:0;
-    overflow-x:hidden;
-  }
-
-  @include tablet {
-
-    .row{margin-left:16%;}
-    p{font-size: 1.8em;
-      max-width:300px;}
-  }
-
-  h2{
-    text-transform: uppercase;
-    text-align:left;
-    margin-bottom:0.5em;
-    @include tablet{
-      font-size:5em;
-    }
-  }
-
-  #map {
-    display:none;
-    @include tablet{
-      display:block;
-    }
-       }
-
-  .contact-photo{
-      height:auto;
-      max-width:100%;
-      margin:1em auto 0 auto;
-      z-index:10;
-      @include tablet{
-        max-height:450px;
-        margin:2em 0 0 -7em;
-      }
-
-  }
-
-  .arrow{
-    position:absolute;
-    max-width:80px;
-    height:auto;
-    left:100%;
-    margin-left:-7em;
-    margin-top:2em;
-    z-index:1000;
-      @include tablet {
-        position:static;
-        max-width:100%;
-        margin-top:0;
-        margin-left:3em;
-      }
-
-
-  }
-
-
-}//----------------------------------------------end of #contact
-
-//--------------------------------------------------------------------------------------media 767px
-@media(min-width:767px){
-
-  //-----------------------navigation
-    .navbar {
-        padding: 20px 0;
-        background: transparent;
-        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        transition: background .5s ease-in-out,padding .5s ease-in-out;
-
-        .page-scroll, .collapse .page-scroll{
-          color: $snow;
-        }
-    }
+@include desktop-s {
 
     .navbar-nav>.active>a {
       background: #cdcdcd !important;
@@ -717,16 +151,622 @@ a{color:inherit;}
     .navigation{
       color:$snow;
     }
+//---------------------end of navigation
 
-//-------------end---of----navigation
 
+
+}//---------------------------------------------------------------------------------media 767px
+
+
+.navbar-fixed-top{
+  border: none;
+}
+
+.section{
+    height:260px;
+
+    @include tablet {
+      height: 100%;
+      padding-top:50px !important;
+      text-align: center;
+      background: $snow;
+      padding-bottom:50px;
+    }
+    h2{margin-bottom:1em;}
+}
 .row-margin{
   margin-top:3em;
   margin-bottom:3em;
 }
 
-}//---------------------------------------------------------------------------------media 767px
+.row{
+  margin-right: -0px;
+  margin-left: 0px;
+}
+/*********************/
+/* LAYOUT / SECTIONS */
+/*********************/
+.section-adjs-h{
+  height:auto;
+  @include tablet {
+    height:100%;
+  }
+}
+.section_head{
+  color:$sea;
+}
 
+.adnote{
+  font-size:1em;
+  margin:1em auto;
+  text-align:center;
+  @include tablet {
+    font-size:1.3em;
+  }
+}
+
+//
+// intro
+//
+.intro{
+  background:transparent url('../img/intro-bg.jpg') center;
+  background-size:300%;
+  color:$snow;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  -webkit-box-shadow: inset 0px -16px 54px -34px rgba(33,46,88,1);
+  -moz-box-shadow: inset 0px -16px 54px -34px rgba(33,46,88,1);
+  box-shadow: inset 0px -16px 54px -34px rgba(33,46,88,1);
+  font-size:0.8em;
+
+  @include mobile-m {
+    font-size:0.9em;
+    background-size:250%;
+  }
+  @include mobile-l {
+    font-size:1.2em;
+    background-size:250%;
+  }
+  @include tablet {
+    background-size:150%;
+    display:block;//czy to jest potrzeben ???
+    font-size:0.6em;
+  }
+  @include desktop-s {
+    background-size:200%;
+    font-size:0.8em;
+  }
+  @include desktop-m {
+    background-size:100%;
+    font-size:0.95em;
+  }
+
+  .intro-head{
+    font-size: 2.2em;
+    margin:0 auto;
+    @include tablet{
+      font-size: 6.3em;
+      line-height:1.2em;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      margin:25% auto 0 auto;
+      width:70%;
+    }
+    @include desktop-m{
+      margin:15% auto 0 auto;
+    }
+
+    .spin{
+      width:auto;
+      z-index:-2;
+      margin-left:1em;
+    }
+    .aero{
+      z-index:10;
+      margin-left:0em;
+      margin-bottom:-1.5em;
+
+    }
+    .aero:before{
+      content: "&";
+      position: absolute;
+      z-index: -1;
+      color:$sea;
+      font-size:4em;
+      margin-left:0.7em;
+      margin-top:-0.3em;
+    }
+  }
+  .arrow-down{
+    padding:1em;
+    box-sizing:border-box;
+    background:transparent;
+    margin:0 auto;
+    width:50px;
+    height:50px;
+    border: 2px $snow solid;
+    border-radius:50%;
+    position:absolute;
+    top:90%;
+    margin-top:-50px;
+    @-moz-document url-prefix() {
+      margin-left: -20%;
+    }
+    .fa{
+      color:$snow !important;
+      font-size:3em;
+      transition: all 1s ease;
+
+    }
+    :hover{
+      .fa{font-size:3.5em;}
+    }
+  }
+
+  @include tablet{
+    .intro-head{
+      .spin{
+        width:auto;
+        z-index:-2;
+        margin-left:1em;}
+
+      .aero{
+        z-index:10;
+        margin-left:-1.5em;
+        margin-bottom:-1.5em;
+        @-moz-document url-prefix() {
+          margin-bottom:-0.3em;
+         }
+      }
+
+      .aero:before{
+        content: "&";
+        position: absolute;
+        z-index: -1;
+        color:$sea;
+        font-size:4em;
+        margin-left:0.7em;
+        margin-top:0.1em;
+      }
+    }
+    .arrow-down{
+      width:70px;
+      height:70px;
+      border: 2px $snow solid;
+      border-radius:50%;
+      position:absolute;
+      top:90%;
+      margin-top:-50px;
+      @-moz-document url-prefix() {
+          margin-left: -10%;
+       }
+      .fa{
+        color:$snow !important;
+        font-size:3em;
+        transition: all 1s ease;
+      }
+      :hover{
+        .fa{font-size:3.5em;}
+      }
+    }
+  }//---------------end of mixin tablet
+}//--------end of #intro
+
+//
+//ABOUT
+//
+.about{
+  background-size: cover;
+  display:flex;
+  align-items:center;
+  font-size:1.2em;
+  margin:0;
+  padding: 2em 0;
+  box-sizing:border-box;
+
+  @include tablet {
+    overflow-x: hidden;
+    font-size:1em;
+    margin-top:0;
+  }
+  .content{
+    @include tablet {
+      align-items:center;
+      font-size:1.4em;
+      text-align:left;
+      margin:auto;}
+  }
+  .box-mini{
+    width:auto;
+    @include tablet {
+      width:650px;
+      margin:1.5em;}
+  }
+
+  h2{
+    color: #ccc;
+    text-align:right;
+    font-size:3em;
+    position:relative;
+    margin-top:-2em;
+      @include tablet {
+        margin-left:-1em;
+        margin-top:0;
+        font-size:6em;
+      }
+      @include desktop-s {
+        font-size:7em;
+      }
+  }
+  h3{
+    color: $indygo;
+    font-size:1.5em;
+    text-align:right;
+  }
+
+  p{text-align:justify;}
+
+  .photo-box{
+    width:280px;
+    height:200px;
+    overflow:hidden;
+    @include tablet {
+      width:450px;
+      height:450px;
+
+    }
+  }
+  .photo1{
+    max-height:450px;
+    width: auto;
+    position:relative;
+    -webkit-box-shadow: 10px 10px 52px 8px rgba(0,0,0,0.07);
+    -moz-box-shadow: 10px 10px 52px 8px rgba(0,0,0,0.07);
+    box-shadow: 10px 10px 52px 8px rgba(0,0,0,0.07);
+    @-moz-document url-prefix() {
+      height:450px;
+     }
+  }
+}//------------------------------------------------end of #about
+
+//
+// OFERT
+//
+.ofert{
+  height:auto;
+  font-size:1.1em;
+    @include tablet {
+      font-size:1.2em;
+    }
+  .container{  margin: 0 auto;}
+
+  .boxes_2{
+    width: 100%;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    @include tablet {
+      flex-direction:row;
+    }
+
+    .box_1_2{
+      margin:1em 0.5em;
+      max-width:100%;
+      padding:1em;
+      @include tablet {
+        margin:1em 3em;
+        max-width:35%;
+        padding:1em;
+        @-moz-document url-prefix() {
+          max-width:45%;
+         }
+      }
+
+      img{
+        max-width:100%;
+        height:auto;
+        margin-bottom:4em;
+      }
+      h3{
+        color: $indygo;
+        text-transform:uppercase;
+        text-align:left;
+        display:block;
+        box-sizing:border-box;
+        position:absolute;
+        margin:3em 0em 0em -0.4em;
+        @-moz-document url-prefix() {
+          margin:-2.4em 0em 0em -0.4em;
+         }
+        font-size:3em;
+        @include mobile-l {
+          margin:4em 0em 0em -0.4em;
+          @-moz-document url-prefix() {
+            margin:-2.4em 0em 0em -0.4em;
+           }
+        }
+        @include tablet {
+          margin:2em 0em 0em -1em;
+          font-size:3em;
+          @-moz-document url-prefix() {
+            margin:-2.4em 0em 0em -1em;
+           }
+        }
+        @include desktop-s {
+          margin:2em 0em 0em -1em;
+          font-size:4em;
+          @-moz-document url-prefix() {
+            margin:-2.4em 0em 0em -0.5em;
+           }
+        }
+        @include desktop-l {
+          font-size:5em;
+        }
+      }
+      p{
+        text-align:justify;
+        text-align-last:left;}
+    }
+
+  }
+}//--------------------------------------------end of ofert
+
+//
+//PRICING
+//
+#pricing{
+  box-sizing:border-box;
+  background:$sea;
+	/* Generated with http://gradient.quasi.ink */
+	background-size: cover;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAkUlEQVQYVwXBOQ7CMBBA0T92vCQRp+YWnIMTUNFQQkODhCjSUCDI4jgzvCf7y81ccKQQiOLpfaRrIqEaWgq5z8jherfQRWg8Vo20QUskVqMuhbxLyPHxtNlvVHGIeEIx3KKkRfEIs1Tk9BrsPX0pKDl3eHWUz0hcjZRavmVEzsPHxmniV2ZUFcGBGc7AxLNuyh/KW0geYM9UdQAAAABJRU5ErkJggg==");
+  padding-bottom:50px;
+  @include tablet {
+    .row{
+      margin:0 auto;}
+  }
+
+    h2, .adnote{color: $snow;}
+    h4{
+      font-size:1.2em;
+      font-weight: bold;
+      color: $snow;
+      text-transform: uppercase;
+      text-align:center;
+      @include mobile-l {
+        font-size:1.3em;}
+        span{
+          &::before {
+            content: "\A";
+            white-space: pre;}
+        }
+
+      @include tablet {
+        font-size:1.5em;
+        span{
+          &::before {
+            content: " ";}
+        }
+      }
+      @include desktop-s {
+        font-size:1.7em;}
+    }
+
+  .pricing-boxes{
+    margin: 0 auto;
+    justify-content:center;
+    flex-flow: row wrap;
+    @include desktop-s {justify-content:space-between;}
+
+    .pricing-box{
+      padding: 0em;
+      width-max:200px;
+      margin: 0 0.5em;
+      box-shadow: 0 15px 30px 0 rgba(0,0,0,.05);
+      @include desktop-s {
+        padding: 1em 4em;
+        width-max:300px;
+        margin: 0 1em;}
+    }
+
+    .price-box{
+      font-size:1.5em;
+      padding: 0.5em;
+      color:$snow;
+      cursor:pointer;
+      @include mobile-m {
+        font-size:1.7em;
+      }
+      @include tablet {
+        font-size:2em;
+      }
+      .price {
+        line-height:1;
+        margin:0 auto;
+        text-align:center;
+        .numb{
+          font-weight: bold;
+          font-size: 2em;}
+      }
+
+      :nth-child(2){
+        display:block;
+        padding: 1em 0.5em;
+        font-size:0.6em;
+        margin:0 auto;
+      }
+    }
+  }//---------------end of pricing boxes
+}//-----------------------------------------end of pricing
+//
+//TIMESHEET
+//
+.timesheet{
+  background-size: cover;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAXklEQVQYV12NOQ6AQAwD7cD/H0iBEDVaLfTEKOYoSDWZWA6nrQn/CYKkrSRwPQ4VZKaFua5B86kE175/TYk7JBIcwk3luPTu0FvvFyRiHOxEgHNrqsXieVVcoYhw6ALMgTfF+iBLRgAAAABJRU5ErkJggg==");
+  padding-bottom:50px;
+  @include desktop-s {
+    .row{  margin:0 auto;}
+  }
+  .container{  margin: 0 auto;  }
+
+  .grafik{
+    font-size:1.3em;
+    margin:0 auto;
+    justify-content:center;
+    flex-flow: row wrap;
+    @include mobile-l {
+      font-size:1.5em;
+    }
+    @include tablet {
+      font-size:2.2em;
+    }
+    @include desktop-s {
+      font-size:3em;
+    }
+
+
+    h4{
+      text-align:center;
+      font-size:0.8em;
+      margin-bottom:1em;
+      @include desktop-s {
+        font-size:0.6em;
+      }
+    }
+    .day{
+      margin: 0 0.2em;
+      @include desktop-s {
+        margin: 0 0.5em;
+      }
+    }
+
+    .lesson{
+      width:3.5em;
+      height:2.5em;
+      border: 2px solid $snow;
+      margin-bottom:0.5em;
+      justify-content:center;
+      align-items:center;
+      @include mobile-l {
+        width:4em;
+      }
+    }
+    .empty{
+      box-shadow:none;
+      border:none;
+    }
+  }
+}//-----------------------------------------end of #timesheet
+
+//
+// #GALLERY
+//
+.gallery{
+  .container{  margin: 0 auto;}
+  .gallery-box{
+    width:100%;
+    flex-wrap:wrap;
+    a{
+      display:block;
+      width:50%;
+      @include tablet {width:25%;}
+    img{
+      max-width:100%;
+      height:auto;}
+    }
+  }
+}//---------------------------------------------end of #gallery//
+// #CONTACT
+//
+.contact{
+  text-align:left !important;
+  color: $indygo !important;
+  height:auto;
+  overflow-x:hidden;
+  margin-left:0em;
+  margin-bottom:0;
+  padding-bottom:0;
+
+  .text{  margin: 0 2em;  }
+
+  #text-module{
+    overflow-x:hidden;
+    margin:2em 0;}
+
+  .row{
+    margin-right:0;
+    overflow-x:hidden;
+  }
+  @include tablet {
+    p{font-size: 1.4em;
+      max-width:300px;}
+  }
+
+  @include desktop-s {
+    .row{margin-left:16%;}
+    p{font-size: 1.8em;}
+  }
+
+  h2{
+    text-transform: uppercase;
+    text-align:left;
+    margin-bottom:0.5em;
+    @include tablet {font-size:5em;}
+  }
+
+  #map{
+    display:none;
+    @include tablet {display:block;}
+  }
+
+  .contact-photo{
+      height:auto;
+      max-width:100%;
+      margin:1em auto 0 auto;
+      z-index:10;
+      @include tablet {
+        max-height:300px;
+        margin:2em 0 2em -15em;
+        @-moz-document url-prefix() {
+            height:300px;
+            margin:2em 0 2em  -3em;
+         }
+      }
+      @include desktop-s {
+        max-height:450px;
+        margin:2em 0 0 -10em;
+        @-moz-document url-prefix() {
+            height:450px;
+            margin:2em 0 0 -3em;
+         }
+      }
+  }
+
+  .arrow{
+    position:absolute;
+    max-width:80px;
+    height:auto;
+    left:100%;
+    margin-left:-7em;
+    margin-top:2em;
+    z-index:1000;
+      @include tablet {
+        position:static;
+        max-width:100%;
+        margin-top:0;
+        margin-left:3em;
+      }
+  }
+}//----------------------------------------------end of #contact
+
+//
+//FOTTER
+//
 footer{
   position:static;
   width:100%;
@@ -746,24 +786,20 @@ footer{
     justify-content: flex-start;
     flex-direction:column;
     align-items: center;
-
     @include tablet{
       flex-direction:row;
       justify-content: space-between;
     }
   }
-
-
-
   h4{
     font-size:1em;
     font-weight:100;
   }
-
   .info{
     i{
       font-size: 1.5em;
       padding:0.2em 0.4em;}
   }
-
 }//------------------end of footer
+
+//--------------------------------------------------------------------------------------media 767px
